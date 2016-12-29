@@ -61,6 +61,18 @@ class IPB4_Converter_Module_Usergroups extends Converter_Module_Usergroups {
 			$insert_data['attachquota'] = 0;
 			$insert_data['canpostattachments'] = 0;
 		}
+		
+		// -1 is disabled
+		if($insert_data['pmquota'] < 0)
+		{
+			$insert_data['pmquota'] = 0;			
+		}
+		
+		// -1 is disabled
+		if($insert_data['maxpmrecipients'] < 0)
+		{
+			$insert_data['maxpmrecipients'] = 0;			
+		}
 
 		return $insert_data;
 	}
